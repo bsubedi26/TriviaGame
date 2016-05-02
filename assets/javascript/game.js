@@ -32,14 +32,14 @@ $(".btn").on("click", function() {
 //function to get a random object property
 function randomProperty(obj) {
     var keys = Object.keys(obj)
-    return obj[keys[ keys.length * Math.random() << 0]];
+    return obj[keys[Math.floor(Math.random() * keys.length)]];
 };
 
 // console.log(randomProperty(questions));
 
 var randomQuestion = randomProperty(questions);
 
-console.log(randomQuestion.choices.length)
+console.log(randomQuestion)
 
 
 
@@ -59,13 +59,17 @@ $("#choices").append('<li>'+randomQuestion.choices[i]+'</li>');
 
 		$("#choices li").on("click", function() {
 			//Gets user answer guess
-			var userAnswer = this.innerHTML;
+			//var userAnswer = this.innerhTML;
+			var userAnswer = $(this).text();
 	
 			if (multipleChoice.indexOf(userAnswer) == randomQuestion.correctAnswer) {
 				correct++;
 				console.log("right")
-
-				//Generate next question (call a function maybe?)
+				//Go to the next question (run a function?)
+			}
+			else {
+				incorrect++;
+				console.log("wrong");
 			}
 
 		})
