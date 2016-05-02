@@ -47,30 +47,27 @@ console.log(randomQuestion.choices.length)
 //Changing page contents
 //Append the random question
 $("#question").append(randomQuestion.question +"<br>");
+var multipleChoice = randomQuestion.choices;
 
 //Loop thru the choices array and add it to a list to display it better
 for (var i = 0; i < randomQuestion.choices.length; i++) {
 
-var choicesList = [];
-choicesList.push(randomQuestion.choices[i]);
-$("#choices").append('<li>'+choicesList)+'</li>';
-
-//If user select the correct answer index from choicesList then correct++ else incorrect++        
+$("#choices").append('<li>'+randomQuestion.choices[i]+'</li>');
+      
 }
-	var wordChoicesArray = randomQuestion.choices;
-	// console.log(choicesList);
+	
 
 		$("#choices li").on("click", function() {
-			console.log(this);
+			//Gets user answer guess
+			var userAnswer = this.innerHTML;
+	
+			if (multipleChoice.indexOf(userAnswer) == randomQuestion.correctAnswer) {
+				correct++;
+				console.log("right")
 
-				// var regex = /(<([^>]+)>)/ig
-				// ,   body = "<div>pancakes</div>"
-				// ,   result = body.replace(regex, "");
-				// console.log(result);
+				//Generate next question (call a function maybe?)
+			}
 
-			// if (questions.choices.indexOf() === questions.correctAnswer) {
-			// 	console.log("Correct ans");
-			// }
 		})
 		
 
