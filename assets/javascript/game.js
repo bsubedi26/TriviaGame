@@ -1,28 +1,57 @@
 $(document).ready(function() {
 
-var correct = 0;
-var incorrect = 0;
-var unanswered = 0;
-var questions = [
+
+
+$(".btn").on("click", function() {
+	
+	// $(".jumbotron").fadeOut(500);
+	var correct = 0;
+	var incorrect = 0;
+	var unanswered = 0;
+	var questions = [
 	{
-	question : "Which of these mountains is the tallest?",
+	question : "Which is the correct answer?",
 	choices: ["Makalu", "K2", "Mount Everest"],
 	correctAnswer: 2
 	},
 	{
-	question : "What year did Einstein publish theory of relativity?",
+	question : "Which is the correct answer?",
 	choices: ["1800", "1905", "2000"],
 	correctAnswer: 1
 	},
 	{
-	question : "Napoleon Bonaparte was the ruler of what country?",
+	question : "Which is the correct answer?",
 	choices: ["Sweden", "Germany", "France", "Argentina"],
 	correctAnswer: 2
 	}
 ]
 
-$(".btn").on("click", function() {
-	console.log("hai")
+function pickRandomProperty(obj) {
+    var result;
+    var count = 0;
+    for (var prop in obj)
+        if (Math.random() < 1/++count)
+           result = prop;
+    return result;
+}
+
+console.log(pickRandomProperty(questions));
+console.log(typeof(questions));
+	// var randomQuestion = questions.choices[ Math.floor(Math.random() * questions.length)]
+
+
+	//Find a way to select one random question to display
+		$(".jumbotron").html("randomQuestion");
+
+		setTimeout(change(), 6000);
+
+		function change() {
+			console.log("geg")
+
+
+		}
+
+
 })
 
 })
