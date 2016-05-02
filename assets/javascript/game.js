@@ -4,52 +4,64 @@ $(document).ready(function() {
 
 $(".btn").on("click", function() {
 	
-	// $(".jumbotron").fadeOut(500);
 	var correct = 0;
 	var incorrect = 0;
 	var unanswered = 0;
 	var questions = [
 	{
-	question : "Which is the correct answer?",
-	choices: ["Makalu", "K2", "Mount Everest"],
-	correctAnswer: 2
+	question : "What is sushi traditionally wrapped in?",
+	choices: ["Edible SeaWeed", "Tobacco Leaf", "Cannabis", "Rolling Papers"],
+	correctAnswer: 1
 	},
+
 	{
-	question : "Which is the correct answer?",
-	choices: ["1800", "1905", "2000"],
+	question : "Which of these people averaged one patent for every three weeks of his life?",
+	choices: ["Makalu", "Nikola Tesla", "Mount Everest"],
 	correctAnswer: 1
 	},
 	{
-	question : "Which is the correct answer?",
-	choices: ["Sweden", "Germany", "France", "Argentina"],
-	correctAnswer: 2
+	question : "If you had Lafite-Rothchild on your dinner table, what would it be?",
+	choices: ["Type of alcohol", "Wine", "Cannabis"],
+	correctAnswer: 1
 	}
+
 ]
 
-function pickRandomProperty(obj) {
-    var result;
-    var count = 0;
-    for (var prop in obj)
-        if (Math.random() < 1/++count)
-           result = prop;
-    return result;
+//function to get a random object property
+function randomProperty(obj) {
+    var keys = Object.keys(obj)
+    return obj[keys[ keys.length * Math.random() << 0]];
+};
+
+console.log(randomProperty(questions));
+var randomQuestion = randomProperty(questions);
+
+console.log(randomQuestion.choices.length)
+	
+
+//Trying to remove start from button
+$("#button").empty();
+
+//Loop thru the choices array and add it to a list to display it better
+for (var i = 0; i < randomQuestion.choices.length; i++) {
+$(this).append('<li>' + randomQuestion.choices[i] + '</li>');
+        
+
+            // $(this).appendTo(".jumbotron");
+            $(".jumbotron").append(this);
+        
 }
-
-console.log(pickRandomProperty(questions));
-console.log(typeof(questions));
-	// var randomQuestion = questions.choices[ Math.floor(Math.random() * questions.length)]
-
-
 	//Find a way to select one random question to display
-		$(".jumbotron").html("randomQuestion");
+		// $(".jumbotron").html(randomQuestion.question +"<br><br>" +  randomQuestion.choices  +"<br><br>" );
 
-		setTimeout(change(), 6000);
 
 		function change() {
-			console.log("geg")
-
+			
+			console.log("timeout?")
 
 		}
+		setTimeout(change, 3000);
+
 
 
 })
