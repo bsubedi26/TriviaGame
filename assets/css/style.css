@@ -1,0 +1,33 @@
+body {
+	font-size: 18px;
+	font-weight:;
+	color: black;
+	background-color: #666699;
+	background-image: url("http://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+}
+
+.numberbox {
+	background-color: #47476b;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.images {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#totalscore {
+	background-color: #7a7a52;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#randomNumber {
+	font-size: 30px;
+}
+#title-top {
+	text-align: center;
+}
+#main {
+	margin: auto;
+	display:block;
+}
