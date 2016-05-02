@@ -13,12 +13,12 @@ function main() {
 	},
 	{
 	question : "Which of these people averaged one patent for every three weeks of his life?",
-	choices: ["Bill Nye the Science Guy", "Bill Gates", "Buddha", "Nikola Tesla"],
+	choices: ["Bill Nye the Science Guy", "Bill Gates", "Nikola Tesla"],
 	correctAnswer: 3
 	},
 	{
 	question : "If you had Lafite-Rothchild on your dinner table, what would it be?",
-	choices: ["Alcohol", "Wine", "Cannabis"],
+	choices: ["Alcohol", "Wine", "Sauce"],
 	correctAnswer: 1
 	}
 ]
@@ -43,7 +43,7 @@ var multipleChoice = randomQuestion.choices;
 for (var i = 0; i < randomQuestion.choices.length; i++) {
 $("#choices").append('<button>'+randomQuestion.choices[i]+'</button>');
 }
-delete randomQu
+
 	$("#choices button").on("click", function() {
 			//Gets user answer guess
 			var userAnswer = $(this).text();
@@ -95,7 +95,7 @@ count = 30;
 
 //Append the random question
 if (!(questions in oldQuestions)) {
-	console.log("pppp")
+	console.log("no duplicate questions")
 randomQuestion = randomProperty(questions);
 }
 $("#question").append(randomQuestion.question +"<br>");
