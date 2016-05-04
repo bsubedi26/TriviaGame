@@ -1,9 +1,10 @@
+/*@import url(https://fonts.googleapis.com/css?family=Permanent+Marker);*/
 body {
-	font-size: 18px;
-	font-weight:;
 	color: black;
 	background-color: #666699;
 	background-image: url("http://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+	font-family: 'Allan', cursive;
+
 }
 
 .numberbox {
@@ -30,4 +31,13 @@ body {
 #main {
 	margin: auto;
 	display:block;
+}
+button {
+	font-size: 18px;
+}
+#question {
+	font-size: 22px;
+}
+#time {
+	font-size: 18px;
 }
